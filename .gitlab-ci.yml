@@ -115,6 +115,7 @@ run_mpi_test_gpu:
   image: art.cscs.ch/contbuild/testing/anfink/${PERSIST_IMAGE_NAME_GPU}
   script:
     - echo "Hello from korali test in Sarus container on node ${SLURMD_NODENAME} (node ID ${SLURM_NODEID}, proc ID ${SLURM_PROCID}, replacing MPI ${USE_MPI})"
+    - echo "This is the modified version from this PR"
     - cd /home/ubuntu/korali/examples/features/running.mpi.cxx && ./run-cmaes 4
   variables:
     SLURM_JOB_NUM_NODES: 2
